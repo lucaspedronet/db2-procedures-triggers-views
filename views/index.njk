@@ -3,8 +3,10 @@
     <title>Bem-vidos ao sistema</title>
   </header>
   <body>
-    {% for nome in nomes %}
-      Sistema de Funcionarios, seja bem-vindo {{ nome }}. <br>      
-    {% endfor %}
+    <h2>SISTEMA DE GERENCIAMENTO HOSPITALAR</h2>
+    <form action="/registro" method="POST">
+      <button type="submit" name="registro" onclick="alert('Consultar Registro no log.')" >Registro de usuários</button>
+    </form>
+    
   </body>
 </html>
