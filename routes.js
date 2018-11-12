@@ -35,4 +35,14 @@ routes.post('/excluido', (req, res) => {
     // res.send(req.body.nome);
 })
 
+routes.get('/registro', (req, res) => {
+ res.render('index')
+})
+
+routes.post('/registro', (req, res) => {
+  console.log(req.body.registro)
+  procedure.view_consultar_registro()
+  res.send('Funcionou!')
+})
+
 module.exports = routes;

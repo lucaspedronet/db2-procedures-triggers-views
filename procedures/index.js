@@ -2,12 +2,22 @@ const config = require('../config')
 const connection = config
 
 module.exports = {
+
+  view_consultar_registro() {
+    let consulta = `SELECT * FROM todoapp.consultar_registros;`
+    connection.query(consulta, true, (error, results, fields) => {
+      if (error){
+        return console.log(error.message);
+      }
+       console.log('Registros:', results[0]);
+    })
+  },
     deletarUser(nome){
       let sql = `DELETE FROM usuarios WHERE nome = ?`;
       connection.query(sql, nome, (error, results, fields) => {
         if (error)
           return console.error(error.message);
-        console.log('Deleted Row(s):', results.affectedRows);
+        console.log('Delete:', results.affectedRows);
       });
     },
 
