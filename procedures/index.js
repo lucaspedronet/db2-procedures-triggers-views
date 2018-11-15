@@ -2,9 +2,9 @@ const config = require('../config')
 const connection = config
 
 module.exports = {
-  cadastarFuncionario(nome, cpf, cargo, salario) {
-    let novoUser = `INSERT INTO funcionario(nome, cpf, cargo, salario) VALUES(?,?,?,?)`;  
-    let dados = [nome, cpf, cargo, salario]
+  cadastarFuncionario(nome, cpf, cargo) {
+    let novoUser = `INSERT INTO funcionario(nome, cpf, cargo, salario) VALUES(?,?,?)`;  
+    let dados = [nome, cpf, cargo]
     connection.query(novoUser, dados, (error, results, fields) => {
       if (error) {
         return console.error(error.message);
@@ -13,8 +13,7 @@ module.exports = {
         console.log(
          `Nome: ${nome}, 
           CPF: ${cpf}, 
-          Cargo: ${cargo}, 
-          Salario: ${salario}`)
+          Cargo: ${cargo}`)
       });
   },
 

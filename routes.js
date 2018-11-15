@@ -10,8 +10,8 @@ routes.get('/cadastrar/funcionario', (req, res) => {
 })
 
 routes.post(`/registro/funcionario`, (req, res) => {
-  const { nome, cpf, cargo, salario } = req.body
-  procedure.cadastarFuncionario(nome, cpf, cargo, salario)
+  const { nome, cpf, cargo } = req.body
+  procedure.cadastarFuncionario(nome, cpf, cargo)
   res.send(`Nome: ${req.body.nome}`)
 })
 
